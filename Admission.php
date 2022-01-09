@@ -24,7 +24,7 @@
             font-family: 'Roboto Condensed', sans-serif;
             height: 300px;
             width: 100%;
-            background-image: url("image/Collage_1.jpeg");
+            background-image: url("images/Collage_1.jpeg");
             background-repeat: no-repeat;
             background-size: 100% 100%;
             position: relative;
@@ -205,7 +205,7 @@
     <div class="back-Text">
         <div class="row">
             <div class="col-md-7">
-                <img src="image/logo1.png" class="f_header-img" />
+                <img src="images/logo1.png" class="f_header-img" />
                 <h2 class="f_logName">Government Womens Residence<br />
                     Polytechnic Tasgoan</h2>
 
