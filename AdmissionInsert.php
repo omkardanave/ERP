@@ -21,7 +21,7 @@
             font-family: 'Roboto Condensed', sans-serif;
             height: 300px;
             width: 100%;
-            background-image: url("images/Collage_1.jpeg");
+            background-image: url("image/Collage_1.jpeg");
             background-repeat: no-repeat;
             background-size: 100% 100%;
             position: relative;
@@ -202,7 +202,7 @@
     <div class="back-Text">
         <div class="row">
             <div class="col-md-7">
-                <img src="images/logo1.png" class="f_header-img" />
+                <img src="image/logo1.png" class="f_header-img" />
                 <h2 class="f_logName">Government Womens Residence<br />
                     Polytechnic Tasgoan</h2>
 
@@ -243,7 +243,7 @@
                             role="tab" title="Complete"> </a>
                     </li>
                 </ul>
-                <form role="form">
+                <form action="AdmissionInsert.php" method="post">
                     <div class="tab-content py-2">
                         <div class="tab-pane active" role="tabpanel" id="step1">
 
@@ -254,31 +254,32 @@
                             <div class="row">
                                 <div class="col-auto">
                                     <label>Application for<a style="color: red;">*</a></label><br>
-                                    <select name="ApplicationFor">
+                                    <select name="ApplicationFor" required>
                                         <option value="0">--select--</option>
-                                        <option>CAP ALLOTMENT</option>
-                                        <option>INSTITUTE LEVEL SEAT ALLOTMENT</option>
+                                        <option value="Cap Allotment">CAP ALLOTMENT</option>
+                                        <option value="Institute level Seat Allotment">INSTITUTE LEVEL SEAT ALLOTMENT
+                                        </option>
                                     </select>
                                 </div>
                                 <div class="col-auto">
                                     <label>Admission To <a style="color: red;">*</a></label><br>
-                                    <select name="AdmissionTO">
+                                    <select name="AdmissionTO" required>
                                         <option value="0">--select--</option>
-                                        <option>FIRST YEAR</option>
-                                        <option>DIRECT SECOND YEAR </option>
+                                        <option value="First Year">FIRST YEAR</option>
+                                        <option value="Direct Second Year">DIRECT SECOND YEAR </option>
                                     </select>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>Branch <a style="color: red;">*</a></label><br>
-                                    <select name="Branch">
+                                    <select name="Branch" required>
                                         <option value="0">--select--</option>
-                                        <option>Computer Engineering</option>
-                                        <option>Information Technology </option>
-                                        <option>Civil Engineering </option>
-                                        <option>Electrical Engineering </option>
-                                        <option>Electronics And Telecommunication </option>
-                                        <option>Dress Designing </option>
+                                        <option value="CO">COMPUTER ENGINEERING</option>
+                                        <option value="IF">INFORMATION TECHNOLOGY </option>
+                                        <option value="CE">CIVIL ENGINEERING </option>
+                                        <option value="EE">ELECTRICAL ENGINEERING </option>
+                                        <option value="EJ">ELECTRONICS AND Telecommunication </option>
+                                        <option value="DD">DRESS DESIGNING </option>
                                     </select>
                                 </div>
                             </div>
@@ -286,9 +287,11 @@
                             <div class="row">
                                 <div class="col-auto">
                                     <label>Admission Year<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="AdmissionYear" value="2021-2022" disabled
-                                        class="inputStyle">
+                                    <input type="text" name="AdmissionYear" value="<?php $year=date('Y');?>" readonly class="inputStyle">
                                 </div>
+
+                                
+
                             </div>
 
                             <div class="row">
@@ -300,41 +303,41 @@
                             <div class="row">
                                 <div class="col-auto">
                                     <label>Last Name<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="LastName" class="inputStyle">
+                                    <input type="text" name="LastName" class="inputStyle" required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>Middle Name<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="MiddleName" class="inputStyle">
+                                    <input type="text" name="MiddleName" class="inputStyle" required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>First Name<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="FirstName" class="inputStyle">
+                                    <input type="text" name="FirstName" class="inputStyle" required>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-auto">
                                     <label>Date of Birth<a style="color: red;">*</a></label> <br>
-                                    <input type="date" name="DOB" class="inputStyle">
+                                    <input type="date" name="DOB" class="inputStyle" required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>Place Of Birth<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="PlaceOfBirth" class="inputStyle">
+                                    <input type="text" name="PlaceOfBirth" class="inputStyle" required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>Mobile No<a style="color: red;">*</a></label> <br>
-                                    <input type="tel" name="MobileNo" class="inputStyle">
+                                    <input type="tel" name="MobileNo" class="inputStyle" required>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-auto">
                                     <label>Candidature Type<a style="color: red;">*</a></label> <br>
-                                    <select name="CandidatureType">
+                                    <select name="CandidatureType" required>
                                         <option value="0">--select--</option>
                                         <option value="TYPE-A">TYPE-A</option>
                                         <option value="TYPE-B">TYPE-B</option>
@@ -346,7 +349,7 @@
 
                                 <div class="col-auto">
                                     <label> Admission Type<a style="color: red;">*</a></label> <br>
-                                    <select name="AdmissionType">
+                                    <select name="AdmissionType" required>
                                         <option value="0">--select--</option>
                                         <option value="CAP I">CAP I</option>
                                         <option value="CAP II">CAP II</option>
@@ -358,41 +361,41 @@
 
                                 <div class="col-auto">
                                     <label>DTE Application No<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="DteApplicationNo" class="inputStyle">
+                                    <input type="text" name="DteApplicationNo" class="inputStyle" required>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-auto">
                                     <label>Blood Group<a style="color: red;">*</a></label> <br>
-                                    <select name="AdmissionType">
+                                    <select name="BloodGrp" required>
                                         <option value="0">--select--</option>
-                                        <option value="o+ve">o+ve</option>
-                                        <option value="A+ve">A+ve</option>
-                                        <option value="B+ve">B+ve</option>
-                                        <option value="AB+ve">AB+ve</option>
-                                        <option value="o-ve">o-ve</option>
-                                        <option value="A-ve">A-ve</option>
-                                        <option value="B-ve">B-ve</option>
-                                        <option value="AB-ve">AB-ve</option>
+                                        <option value="O+VE">O+VE</option>
+                                        <option value="A+VE">A+VE</option>
+                                        <option value="B+VE">B+VE</option>
+                                        <option value="AB+VE">AB+VE</option>
+                                        <option value="O-VE">O-VE</option>
+                                        <option value="A-VE">A-VE</option>
+                                        <option value="B-VE">B-VE</option>
+                                        <option value="AB-VE">AB-VE</option>
                                     </select>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>Nationality<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="Nationality" class="inputStyle">
+                                    <input type="text" name="Nationality" class="inputStyle" required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>State Merit No<a style="color: red;">*</a></label> <br>
-                                    <input type="tel" name="SateMeritNo" class="inputStyle">
+                                    <input type="tel" name="SateMeritNo" class="inputStyle" required>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-auto">
                                     <label>Is Handicapped<a style="color: red;">*</a></label> <br>
-                                    <select name="IsHandicapped">
+                                    <select name="IsHandicapped" required>
                                         <option value="0">--select--</option>
                                         <option value="YES">YES</option>
                                         <option value="NO">NO</option>
@@ -401,7 +404,7 @@
 
                                 <div class="col-auto">
                                     <label>Religion<a style="color: red;">*</a></label> <br>
-                                    <select name="Religion">
+                                    <select name="Religion" required>
                                         <option value="0">--select--</option>
                                         <option value="HINDU">HINDU</option>
                                         <option value="MUSLIM">MUSLIM</option>
@@ -415,7 +418,7 @@
                                 </div>
                                 <div class="col-auto">
                                     <label>Caste<a style="color: red;">*</a></label> <br>
-                                    <select name="Caste">
+                                    <select name="Caste" required>
                                         <option value="0">- Select -</option>
                                         <option value="1">ATTAR</option>
                                         <option value="2">BADHINI</option>
@@ -871,7 +874,7 @@
                             <div class="row">
                                 <div class="col-auto">
                                     <label>Domiciled<a style="color: red;">*</a></label> <br>
-                                    <select name="Domiciled">
+                                    <select name="Domiciled" required>
                                         <option value="0">-Select-</option>
                                         <option value="Maharashtra State (MS)">Maharashtra State (MS)</option>
                                         <option value="Out of Maharashtra State (OMS)">Out of Maharashtra State
@@ -882,7 +885,7 @@
 
                                 <div class="col-auto">
                                     <label> Category<a style="color: red;">*</a></label> <br>
-                                    <select name="Category">
+                                    <select name="Category" required>
                                         <option value="0">- Select -</option>
                                         <option value="1">OPEN</option>
                                         <option value="2">SC</option>
@@ -901,7 +904,7 @@
 
                                 <div class="col-auto">
                                     <label>Defence<a style="color: red;">*</a></label> <br>
-                                    <select name="Defence">
+                                    <select name="Defence" required>
                                         <option value="0">-Select-</option>
                                         <option value="yes">YES</option>
                                         <option value="No">NO</option>
@@ -913,18 +916,18 @@
                                 <div class="col-auto">
                                     <label>Student Aadhar No<a style="color: red;">*</a></label> <br>
                                     <input type="text" name="StudentAdharNo" class="inputStyle"
-                                        pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}">
+                                        pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>Student Mail Id<a style="color: red;">*</a></label> <br>
-                                    <input type="email" name="MailId" class="inputStyle">
+                                    <input type="email" name="MailId" class="inputStyle" required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>PAN<a style="color: red;">*</a></label> <br>
                                     <input type="text" name="PanNo" class="inputStyle"
-                                        pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}">
+                                        pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" required>
                                 </div>
                             </div>
 
@@ -938,34 +941,38 @@
                             <div class="row">
                                 <div class="col-auto">
                                     <label>Account No<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="AccountNo" class="inputStyle">
+                                    <input type="text" name="AccountNo" class="inputStyle" required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>Bank Name<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="BankName" class="inputStyle">
+                                    <input type="text" name="BankName" class="inputStyle" required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>Branch Name<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="BranchName" class="inputStyle">
+                                    <input type="text" name="BranchName" class="inputStyle" required>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-auto">
                                     <label>Branch Code<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="BranchCode" class="inputStyle" pattern="">
+                                    <input type="text" name="BranchCode" class="inputStyle"  required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>IFSC Code<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="IFSCCode" class="inputStyle">
+                                    <input type="text" name="IFSCCode" class="inputStyle" required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>Is Account Linked With Aadhar <a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="IsLinked" class="inputStyle">
+                                    <select name="IsLinked" required>
+                                        <option value="0">-Select-</option>
+                                        <option value="yes">YES</option>
+                                        <option value="No">NO</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -973,7 +980,8 @@
                             <div class="row">
 
                             </div>
-                            <button type="button" class="btn btn-primary next-step float-right">Next</button>
+                            <input type="submit" class="btn btn-primary next-step float-right" id="tab1BTNid"
+                                name="tab1btn" value="Next">
                         </div>
                         <div class="tab-pane" role="tabpanel" id="step2">
 
@@ -983,58 +991,58 @@
                             <div class="row">
                                 <div class="col-auto">
                                     <label>Father's Last Name<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="FLastName" class="inputStyle" pattern="">
+                                    <input type="text" name="FLastName" class="inputStyle"  required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>Father's First Name<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="FFirstName" class="inputStyle">
+                                    <input type="text" name="FFirstName" class="inputStyle" required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>Father's Middle Name <a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="FMiddleName" class="inputStyle">
+                                    <input type="text" name="FMiddleName" class="inputStyle" required>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-auto">
                                     <label>Mother's Last Name <a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="MLastName" class="inputStyle" pattern="">
+                                    <input type="text" name="MLastName" class="inputStyle"  required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>Mother's First Name<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="MFirstName" class="inputStyle">
+                                    <input type="text" name="MFirstName" class="inputStyle" required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>Mother's Middle Name <a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="MMiddleName" class="inputStyle">
+                                    <input type="text" name="MMiddleName" class="inputStyle" required>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-auto">
                                     <label>Father's Profession <a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="FProfesion" class="inputStyle" pattern="">
+                                    <input type="text" name="FProfesion" class="inputStyle" required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>Mother's Profession<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="MProfession" class="inputStyle">
+                                    <input type="text" name="MProfession" class="inputStyle" required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>Parent's Mail ID<a style="color: red;">*</a></label> <br>
-                                    <input type="email" name="PEmail" class="inputStyle">
+                                    <input type="email" name="PEmail" class="inputStyle" required>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-auto">
                                     <label>Parent's Mobile No<a style="color: red;">*</a></label> <br>
-                                    <input type="tel" name="PMobileNo" class="inputStyle" pattern="">
+                                    <input type="tel" name="PMobileNo" class="inputStyle"  required>
                                 </div>
                             </div>
 
@@ -1049,7 +1057,7 @@
                             <div class="row">
                                 <div class="col-auto">
                                     <label>State <a style="color: red;">*</a></label> <br>
-                                    <select name="PADDState">
+                                    <select name="PADDState" required>
                                         <option value="0">- Select -</option>
                                         <option value="22">MAHARASHTRA</option>
                                         <option value="23">KARNATAKA</option>
@@ -1085,7 +1093,7 @@
 
                                 <div class="col-auto">
                                     <label>District<a style="color: red;">*</a></label> <br>
-                                    <select name="PADDDistrict">
+                                    <select name="PADDDistrict" required>
                                         <option value="0">- Select -</option>
                                         <option value="1">AHMEDNAGAR</option>
                                         <option value="2">AKOLA</option>
@@ -1464,15 +1472,15 @@
 
                                 <div class="col-auto">
                                     <label>Taluka<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="PADDTaluka" class="inputStyle">
+                                    <input type="text" name="PADDTaluka" class="inputStyle" required>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-auto">
                                     <label>Pincode<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="PADDPincode" class="inputStyle"
-                                        pattern="[0-9]{3}-[0-9]{3}">
+                                    <input type="text" name="PADDPincode" class="inputStyle" pattern="[0-9]{3}-[0-9]{3}"
+                                        required>
                                 </div>
                             </div>
 
@@ -1487,24 +1495,25 @@
                             <div class="row">
                                 <div class="col-auto">
                                     <label>Guardian Name <a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="Gname" class="inputStyle" pattern="">
+                                    <input type="text" name="Gname" class="inputStyle"  required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>Relationship<a style="color: red;">*</a></label> <br>
-                                    <input type="text" name="GRelationship" class="inputStyle" pattern="">
+                                    <input type="text" name="GRelationship" class="inputStyle"  required>
                                 </div>
 
                                 <div class="col-auto">
                                     <label>Mobile<a style="color: red;">*</a></label> <br>
-                                    <input type="tel" name="GMobileNo" class="inputStyle">
+                                    <input type="tel" name="GMobileNo" class="inputStyle" required>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-auto">
                                     <label>Email<a style="color: red;">*</a></label> <br>
-                                    <input type="email" name="GEmail" class="inputStyle" pattern="[0-9]{3}-[0-9]{3}">
+                                    <input type="email" name="GEmail" class="inputStyle" 
+                                        required>
                                 </div>
 
                             </div>
@@ -1516,7 +1525,7 @@
                                     <button type="button" class="btn btn-outline-primary prev-step">Previous</button>
                                 </li>
                                 <li class="list-inline-item">
-                                    <button type="button" class="btn btn-primary next-step">Save and
+                                    <input type="submit" class="btn btn-primary next-step" name="tab2btn">Save and
                                         continue</button>
                                 </li>
                             </ul>
@@ -1546,13 +1555,13 @@
                                     <tr>
                                         <td>10th</td>
                                         <td><input type="text" name="10thUniversity" placeholder="Enter University "
-                                                class="inputStyle">
+                                                class="inputStyle" required>
                                         </td>
                                         <td><input type="text" name="SchoolName" placeholder="Enter School Name "
-                                                class="inputStyle">
+                                                class="inputStyle" required>
                                         </td>
                                         <td>
-                                            <select name="Month">
+                                            <select name="10thPMonth" required>
                                                 <option value="0">--select--</option>
                                                 <option value="January">January</option>
                                                 <option value="February">February</option>
@@ -1569,7 +1578,7 @@
                                             </select>
                                         </td>
                                         <td>
-                                            <select name="Year">
+                                            <select name="10thPYear" required>
                                                 <option value="0">--select--</option>
                                                 <option value="2023">2023</option>
                                                 <option value="2022">2022</option>
@@ -1583,18 +1592,19 @@
                                         </td>
 
                                         <td><input type="text" name="10thSeatNo" placeholder="Enter Seat No "
-                                                class="inputStyle">
+                                                class="inputStyle" required>
                                         </td>
                                         <td><input type="text" name="10thMarkObtained" placeholder="Enter Marks "
-                                                class="inputStyle">
+                                                class="inputStyle" required>
                                         </td>
-                                        <td><input type="text" name="10thMarkOutoff" placeholder="" class="inputStyle">
+                                        <td><input type="text" name="10thMarkOutoff" placeholder="" class="inputStyle"
+                                                required>
                                         </td>
                                         <td><input type="text" name="10thpercentage" placeholder="Enter percentage "
-                                                class="inputStyle">
+                                                class="inputStyle" required>
                                         </td>
                                         <td>
-                                            <select name="Result">
+                                            <select name="Result" required>
                                                 <option value="0">--select--</option>
                                                 <option value="Pass">Pass</option>
                                                 <option value="Fail">Fail</option>
@@ -1607,11 +1617,11 @@
                                         <td><input type="text" name="12thUniversity" placeholder="Enter University "
                                                 class="inputStyle">
                                         </td>
-                                        <td><input type="text" name="CollageName" placeholder="Enter Collage Name "
+                                        <td><input type="text" name="12thCollageName" placeholder="Enter Collage Name "
                                                 class="inputStyle">
                                         </td>
                                         <td>
-                                            <select name="Month">
+                                            <select name="12thPMonth">
                                                 <option value="0">--select--</option>
                                                 <option value="January">January</option>
                                                 <option value="February">February</option>
@@ -1628,7 +1638,7 @@
                                             </select>
                                         </td>
                                         <td>
-                                            <select name="Year">
+                                            <select name="12thPYear">
                                                 <option value="0">--select--</option>
                                                 <option value="2023">2023</option>
                                                 <option value="2022">2022</option>
@@ -1652,7 +1662,7 @@
                                                 class="inputStyle">
                                         </td>
                                         <td>
-                                            <select name="Result">
+                                            <select name="12thResult">
                                                 <option value="0">--select--</option>
                                                 <option value="Pass">Pass</option>
                                                 <option value="Fail">Fail</option>
@@ -1676,12 +1686,13 @@
                                 <tbody>
                                     <tr>
                                         <td>10th</td>
-                                        <td><input type="text" name="10thMathematics" placeholder=" "
-                                                class="inputStyle">
+                                        <td><input type="text" name="10thMathematics" placeholder=" " class="inputStyle"
+                                                required>
                                         </td>
                                         <td><input type="text" name="10thGeneralScience" placeholder=" "
-                                                class="inputStyle"></td>
-                                        <td><input type="text" name="10thEnglish" placeholde=" " class="inputStyle">
+                                                class="inputStyle" required></td>
+                                        <td><input type="text" name="10thEnglish" placeholde=" " class="inputStyle"
+                                                required>
                                         </td>
 
                                     </tr>
@@ -1724,10 +1735,11 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><input type="text" name="PastInstitute" placeholder=" " class="inputStyle">
+                                        <td><input type="text" name="PastInstitute" placeholder=" " class="inputStyle"
+                                                required>
                                         </td>
                                         <td><input type="text" name="PastInstituteAdd" placeholder=" "
-                                                class="inputStyle"></td>
+                                                class="inputStyle" required></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1743,7 +1755,8 @@
                                     <button type="button" class="btn btn-outline-primary prev-step">Previous</button>
                                 </li>
                                 <li class="list-inline-item">
-                                    <button type="button" class="btn btn-primary btn-info-full next-step">Save and
+                                    <input type="submit" class="btn btn-primary btn-info-full next-step"
+                                        name="tab3btn">Save and
                                         continue</button>
                                 </li>
                             </ul>
@@ -1767,21 +1780,20 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>Passport Size Photo</td>
-                                        <td><input type="file" name="ProfilePhoto
-                                    " placeholder=" " class="inputStyle"></td>
+                                        <td>Passport Size Photo <a style="color: red;">*</a></td>
+                                        <td><input type="file" name="ProfilePhoto" placeholder=" " class="inputStyle" required></td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td>Allotment Letter</td>
-                                        <td><input type="file" name="AllotmentLetter" placeholder=" "
-                                                class="inputStyle"></td>
+                                        <td>Allotment Letter <a style="color: red;">*</a></td>
+                                        <td><input type="file" name="AllotmentLetter" placeholder=" " class="inputStyle"
+                                                required></td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
-                                        <td>ARC Confirmation Letter</td>
-                                        <td><input type="file" name="ARC Confirmation Letter" placeholder=" "
-                                                class="inputStyle">
+                                        <td>ARC Confirmation Letter <a style="color: red;">*</a></td>
+                                        <td><input type="file" name="ARCConfirmationLetter" placeholder=" "
+                                                class="inputStyle" required>
                                         </td>
                                     </tr>
 
@@ -1793,25 +1805,29 @@
                                     </tr>
                                     <tr>
                                         <td>5</td>
-                                        <td>SSC (10th Std.) Marksheet</td>
-                                        <td><input type="file" name="SSCMarksheet" placeholder=" " class="inputStyle">
+                                        <td>SSC (10th Std.) Marksheet <a style="color: red;">*</a></td>
+                                        <td><input type="file" name="SSCMarksheet" placeholder=" " class="inputStyle"
+                                                required>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>6</td>
-                                        <td>Leaving or Transfer Certificate</td>
-                                        <td><input type="file" name="LC" placeholder=" " class="inputStyle"></td>
+                                        <td>Leaving or Transfer Certificate <a style="color: red;">*</a></td>
+                                        <td><input type="file" name="LC" placeholder=" " class="inputStyle" required>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>7</td>
-                                        <td>Domicile Certificate</td>
-                                        <td><input type="file" name="Domicile" placeholder=" " class="inputStyle">
+                                        <td>Domicile Certificate<a style="color: red;">*</a></td>
+                                        <td><input type="file" name="Domicile" placeholder=" " class="inputStyle"
+                                                required>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>8</td>
-                                        <td>Aadhar Card</td>
-                                        <td><input type="file" name="AadharCard" placeholder=" " class="inputStyle">
+                                        <td>Aadhar Card <a style="color: red;">*</a></td>
+                                        <td><input type="file" name="AadharCard" placeholder=" " class="inputStyle"
+                                                required>
                                         </td>
                                     </tr>
                                     <tr>
@@ -1829,8 +1845,8 @@
                                     <tr>
                                         <td>11</td>
                                         <td>Non-Creamy Layer Certificate (if applicable)</td>
-                                        <td><input type="file" name="Non-CreamyLayer" placeholder=" "
-                                                class="inputStyle"></td>
+                                        <td><input type="file" name="NonCreamyLayer" placeholder=" " class="inputStyle">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>12</td>
@@ -1852,8 +1868,9 @@
                                     </tr>
                                     <tr>
                                         <td>15</td>
-                                        <td>Bank Passbook</td>
-                                        <td><input type="file" name="BankPassbook" placeholder=" " class="inputStyle">
+                                        <td>Bank Passbook<a style="color: red;">*</a></td>
+                                        <td><input type="file" name="BankPassbook" placeholder=" " class="inputStyle"
+                                                required>
                                         </td>
                                     </tr>
                                     <tr>
@@ -1879,8 +1896,9 @@
                                     <button type="button" class="btn btn-outline-primary prev-step">Previous</button>
                                 </li>
                                 <li class="list-inline-item">
-                                    <button type="button" class="btn btn-primary btn-info-full next-step">Save and
-                                        continue</button>
+                                    <input type="submit" class="btn btn-primary btn-info-full next-step" name="tab4btn"
+                                        onclick="document.getElementById('Applicationid').stepUp()">
+
                                 </li>
                             </ul>
                         </div>
@@ -1894,6 +1912,169 @@
             </section>
         </div>
     </div>
+
+
 </body>
 
 </html>
+
+
+
+<?php
+    require 'Connect.php';
+
+    function Password()
+    {
+        $numchars = rand(4,15); 
+        $chars =   explode(',','a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,0,1,2,3,4,5,6,7,8,9'); 
+        $pass=''; 
+        for($i=0; $i<$numchars;$i++)
+        { 
+        $pass.=$chars[rand(0,count($chars)-1)]; 
+        } 
+        return $pass; 
+    }
+    $StudentID = $_POST['Branch'].date('Y').(string)$_POST['ApplicationId'];
+    $Pass=Password();
+    if($_SERVER['REQUEST_METHOD']==='POST')
+    {
+        if(isset($_POST['tab4btn']))
+        {
+        /* StudentDetail_1 */
+            $ApplicationFor=$_POST['ApplicationFor'];
+            $AdmissionTo=$_POST['AdmissionTO'];
+            $Branch=$_POST['Branch'];
+            $AdmissionYear=date('Y');
+            $FirstName=$_POST['FirstName'];
+            $MiddleName=$_POST['MiddleName'];
+            $LastName=$_POST['LastName'];
+            $Dob=$_POST['DOB'];
+            $BirthPlace=$_POST['PlaceOfBirth'];
+            $AdharId=$_POST['StudentAdharNo'];
+            $PanNo=$_POST['PanNo'];
+            $Email=$_POST['MailId'];
+            $MobileNo=$_POST['MobileNo'];
+            
+            /*StudentDetails_2*/
+            $Religion=$_POST['Religion'];
+            $Caste=$_POST['Caste'];
+            $AdmissionCategory=$_POST['Category'];
+            $BloodGrp=$_POST['BloodGrp'];
+            $Ishandicaped=$_POST['IsHandicapped'];
+
+            /*StudentBankDetails*/
+            $AccountNo=$_POST['AccountNo'];
+            $BankName=$_POST['BankName'];
+            $BranchName=$_POST['BranchName'];
+            $Branchcode=$_POST['BranchCode'];
+            $Ifsccode=$_POST['IFSCCode'];
+            $IsLinked=$_POST['IsLinked'];
+            /*FamilyDetails*/
+            $FFirstName=$_POST['FFirstName'];
+            $FLastName=$_POST['FLastName'];
+            $FMiddleName=$_POST['FMiddleName'];
+            $MFirstName=$_POST['MFirstName'];
+            $MLastName=$_POST['MLastName'];
+            $MMiddleName=$_POST['MMiddleName'];
+            $Fprofession=$_POST['FProfesion'];
+            $Mprofession=$_POST['MProfession'];
+            $PEmail=$_POST['PEmail'];
+            $PMob=$_POST['PMobileNo'];
+
+            /*AddressDetails*/
+            $State=$_POST['PADDState'];
+            $District=$_POST['PADDDistrict'];
+            $Taluka=$_POST['PADDTaluka'];
+            $Pincode=$_POST['PADDPincode'];
+
+            /*GuardianDetails*/
+            $GName=$_POST['Gname'];
+            $GRelationship=$_POST['GRelationship'];
+            $Gmob=$_POST['GMobileNo'];
+            $GEmail=$_POST['GEmail'];
+
+
+            /*SSCDetails*/
+            $Board10th=$_POST['10thUniversity'];
+            $School10th=$_POST['SchoolName'];
+            $PassMonth10th=$_POST['10thPMonth'];
+            $PassYear10th=$_POST['10thPYear'];
+            $SeatNo10th=$_POST['10thSeatNo'];
+            $Marks10th=$_POST['10thMarkObtained'];
+            $Outoff10th=$_POST['10thMarkOutoff'];
+            $Per10th=$_POST['10thpercentage'];
+            $Result10th=$_POST['Result'];
+            $Math10th=$_POST['10thMathematics'];
+            $GeneralScience10th=$_POST['10thGeneralScience'];
+            $English10th=$_POST['10thEnglish'];
+
+            /*HSC Details*/
+            $Board12th=$_POST['12thUniversity'];
+            $School12th=$_POST['12thCollageName'];
+            $PassMonth12th=$_POST['12thPMonth'];
+            $PassYear12th=$_POST['12thPYear'];
+            $SeatNo12th=$_POST['12thSeatNo'];
+            $Marks12th=$_POST['12thMarkObtained'];
+            $Outoff12th=$_POST['12thMarkOutoff'];
+            $Per12th=$_POST['12thpercentage'];
+            $Result12th=$_POST['12thResult'];
+            $Math12th=$_POST['12thMathematics'];
+            $Physics12th=$_POST['12thPhysics'];
+            $Chemistry12th=$_POST['12thChemistry'];
+            $PreviousSchoolName=$_POST['PastInstitute'];
+            $PreviousSchoolAdd=$_POST['PastInstituteAdd'];
+
+            /*Documents*/
+            $PassportSizePhoto=$_POST['ProfilePhoto'];
+            $AllotmentLetter=$_POST['AllotmentLetter'];
+            $ARCConfirmation=$_POST['ARCConfirmationLetter'];
+            $HSCMarksheet=$_POST['HSCMarksheet'];
+            $SSCMarksheet=$_POST['SSCMarksheet'];
+            $LC=$_POST['LC'];
+            $Domacile=$_POST['Domicile'];
+            $Adharcard=$_POST['AadharCard'];
+            $CastCertificate=$_POST['CasteCertificate'];
+            $CastValidity=$_POST['CasteValidity'];
+            $NonCreamylayer=$_POST['NonCreamyLayer'];
+            $Income=$_POST['IncomeCertificate'];
+            $EWS=$_POST['EWSCertificate'];
+            $Defence=$_POST['DefenseCertificate'];
+            $BankPassbook=$_POST['BankPassbook'];
+            $GapCertificate=$_POST['GapCertificate'];
+            $Other=$_POST['OtherCertificate'];
+
+            $query=["INSERT INTO StudentDetail_1(Id,APPLICATIONFOR,ADMISSIONTO,BRANCH,ADMISSIONYEAR,FIRSTNAME,MIDDELNAME,LASTNAME,DOB,BIRTHPLACE,ADHARID,PANNO,EMAIL,MOBILENO,PASS) 
+            VALUES('$StudentID','$ApplicationFor','$AdmissionTo','$Branch','$AdmissionYear','$FirstName','$MiddleName','$LastName','$Dob','$BirthPlace','$AdharId','$PanNo','$Email','$MobileNo','$Pass');",
+            "INSERT INTO StudentDetail_2(RELIGION,CASTE,ADMISSIONCATEGORY,BLOODGROUP,ISHANDICAPED,ID) 
+            VALUES('$Religion','$Caste','$AdmissionCategory','$BloodGrp','$Ishandicaped','$StudentID');",
+            "INSERT INTO STUDENTBANKDETAIL(ACCOUNTNO,BANKNAME,BRANCHNAME,BRANCHCODE,IFSCCODE,ACCOUNTLINKED,ID) 
+            VALUES('$AccountNo','$BankName','$BranchName','$Branchcode','$Ifsccode','$IsLinked','$StudentID');",
+            "INSERT INTO FamilyDetails(FATHERSFIRSTNAME,FATHERSLASTNAME,FATHERSMIDDELNAME,MOTHERSFIRSTNAME,MOTHERSLASTNAME,MOTHERSMIDDELNAME, FATHERSPROFESSION,MOTHERSPROFESSION,PARENTSEMAIL,PARENTSMOBNUMBER,ID) 
+            VALUES('$FFirstName','$FLastName','$FMiddleName','$MFirstName','$MLastName','$MMiddleName','$Fprofession','$Mprofession','$PEmail','$PMob','$StudentID');",
+            "INSERT INTO AddressDetails(STATES,DISTRICT,TALUKA,PINCODE,ID) 
+            VALUES('$State','$District','$Taluka','$Pincode','$StudentID');",
+            "INSERT INTO GuardianDetails(GUARDIANNAME, RELATIONSHIP,MOBILENO,EMAIL,ID) 
+            VALUES('$GName','$GRelationship','$Gmob','$GEmail','$StudentID');",
+            "INSERT INTO SSCDetails(BOARD,SCHOOL,PASSMONTH,PASSYEAR,SEATNO,MARKS,OUTOFF,PER,RESULT,MATHMARKS,GENERALSCIENCE,ENGLISH,ID) 
+            VALUES('$Board10th','$School10th','$PassMonth10th','$PassYear10th','$SeatNo10th','$Marks10th','$Outoff10th','$Per10th','$Result10th','$Math10th','$GeneralScience10th','$English10th','$StudentID');",
+            "INSERT INTO HSCDetails(BOARD,SCHOOL,PASSMONTH,PASSYEAR,SEATNO,MARKS,OUTOFF,PER,RESULT,MATHMARKS, PHYSICS,CHEMISTRY,PREVIOUSSCHOOLNAME,PREVIOUSSCHOOLADD,ID) 
+            VALUES('$Board12th','$School12th','$PassMonth12th','$PassYear12th','$SeatNo12th','$Marks12th','$Outoff12th','$Per12th','$Result12th','$Math12th','$Physics12th','$Chemistry12th','$PreviousSchoolName','$PreviousSchoolAdd','$StudentID');",
+            "INSERT INTO DocumenDetails(PASSPORTSIZEPHOTO,ALLOTMENTLETTER,ARCCONFIRMATION,HSCMARKSHEET,SSCMARKSHEET,LEAVINGCERTIFICATE,DOMACILE,ADHARCARD,CASTCERTIFICATE,CASTVALIDITY,NONCRIMILIAR,INCOME,EWS,DEFENCE,BANKPASSBOOK,GAPCERTIFICATE,OTHER,ID) 
+            VALUES('$PassportSizePhoto','$AllotmentLetter','$ARCConfirmation','$HSCMarksheet','$SSCMarksheet','$LC','$Domacile','$Adharcard','$CastCertificate','$CastValidity','$NonCreamylayer','$Income','$EWS','$Defence','$BankPassbook','$GapCertificate','$Other','$StudentID');"];
+
+            foreach ($query as $statement) {
+                if ($conn->query($statement)) {
+                    printf("Record inserted successfully.<br />");
+                }
+                if ($conn->errno) {
+                    printf($conn->error);
+                }
+
+            }
+        }
+    }
+
+
+
+
+?>
